@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孫サポート窓口</title>
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/destyle.css@1.0.5/destyle.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <!-- ナビゲーション -->
+        <div id="nav">
+            <p class="text_white">孫サポート窓口</p>
+        </div>
+        
+        <div id="main_contents">
+            <!-- 戻る/進むボタン -->
+            <div id="head_box">
+                <div id="return_button">
+                    <img id="return_button_img" src="images/back_button4.png" alt="戻るボタン" onclick="pageBack()">
+                </div>
+                <div id="next_button">
+                    <img id="next_button_img" src="images/next_button2.png" alt="進むボタン" onclick="pageNext()">
+                </div>
+            </div>
+            
+            <div id="white"></div>
+            
+            <div id="scroll_box"> <!-- スクロールボックス -->
+                <!-- タイトル -->
+                <div id="title_box" class="border_radius">
+                    <p id="title" class="text_center text_32px"></p>
+                </div>
+        
+        
+                <!-- ビデオでの説明 -->
+                <div id="video_box">
+                    <video id="video1" src="movie/main_movie.mp4" poster="images/thumbnail.png" playsinline></video>
+                    <p class="text_center"><input type="range" id="progress" value="0" min="0" max="78" step="1"></p>
+                    <p id="ichi" class="text_center">0:00</p>
+                    <div id="video_items">
+                        <img id="back" src="images/back.png" alt="巻き戻し" onclick="backVideo(5.00)">  <!-- 引数に秒数を指定-->
+                        <img id="play_video" src="images/play.png" alt="再生" onclick="playVideo()">
+                        <img id="front" src="images/front.png" alt="早送り" onclick="frontVideo(5.00)">  <!-- 引数に秒数を指定-->
+                    </div>
+                </div>
+                
+        
+                <!-- 説明 -->
+                <div id="explain_box">
+                    <div id="explain_box1" class="border_radius">
+                        <p id="explain1" class="text_center text_36px"></p>
+                        <p id="explain_detail1" class="text_center"></p>
+                        <div id="explain_detail_box1" onclick="openExplainDetail(1)">
+                            <p id="tap_text1" class="text_center text_24px">タップで詳細を表示</p>
+                        </div>
+                    </div>
+                    <div id="explain_box2" class="border_radius">
+                        <p id="explain2" class="text_center text_36px"></p>
+                        <p id="explain_detail2" class="text_center"></p>
+                        <div id="explain_detail_box2" onclick="openExplainDetail(2)">
+                            <p id="tap_text2" class="text_center text_24px">タップで詳細を表示</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+        
+                <!-- 質問 -->
+                <div id="quistion_box">
+                    <p id="quistion" class="text_center">test_quistion</p>
+                    <p class="text_center"><img id="quistion_img" src="images/記入欄/社会保険料項目.png" alt="記入欄"></p>
+                </div>
+        
+                <!-- 回答 -->
+                <div id="answer_box">
+                    <div id="answer_type_yn">
+                        <div onclick="onAnswerTypeYes(true)" id="answer_yes"><p id="answer_yes_text">はい</p></div>
+                        <div onclick="onAnswerTypeYes(false)" id="answer_no"><p id="answer_no_text">いいえ</p></div>
+                    </div>
+                    <div id="answer_type_num">
+                        <div id="answer_num_1"></div>
+                        <div id="answer_num_2"></div>
+                        <div id="answer_num_3"></div>
+                        <div id="answer_num_4"></div>
+                        <div id="answer_num_5"></div>
+                        <div id="answer_num_6"></div>
+                    </div>
+                    <div id="answer_type_slider">
+                        <div onclick="onAnswerSlider(0)" id="answer_slider_0"></div>
+                        <div onclick="onAnswerSlider(1)" id="answer_slider_1"></div>
+                        <div onclick="onAnswerSlider(2)" id="answer_slider_2"></div>
+                        <div onclick="onAnswerSlider(3)" id="answer_slider_3"></div>
+                        <div onclick="onAnswerSlider(4)" id="answer_slider_4"></div>
+                        <div onclick="onAnswerSlider(5)" id="answer_slider_5"></div>
+                        <div onclick="onAnswerSlider(6)" id="answer_slider_6"></div>
+                        <div onclick="onAnswerSlider(7)" id="answer_slider_7"></div>
+                        <div onclick="onAnswerSlider(8)" id="answer_slider_8"></div>
+                        <div onclick="onAnswerSlider(9)" id="answer_slider_9"></div>
+                        <div onclick="onAnswerSlider(10)" id="answer_slider_10"></div>
+                        <div onclick="onAnswerSlider(11)" id="answer_slider_11"></div>
+    
+                    </div>
+                    <div id="answer_type_input">
+                        <div id="input_title">
+                            <img src="" alt="">
+                            <p class="text_20px">入力してください</p>
+                        </div>
+                        <div><input type="text" onblur="commaChange(this);" pattern="\d*" id="answer_text"></div>
+                    </div>
+                    <div id="answer_type_fixed">
+                        <p id="answer_fixed"></p>
+                        <div>
+                            <p id="kinyu_text" class="text_20px">金額を申請書に記入してください</p>
+                        </div>
+                    </div>
+                    <div id="answer_type_inputs">
+                        <div id="inputs_title">
+                            <p class="text_20px">生年月日（西暦）を入力してください</p>
+                        </div>
+                        <div id="inputs_flex">
+                            <div class="inputs_flex_1"><input type="number" id="answer_text1"></div>
+                            <div class="inputs_flex_2"><p>年</p></div>
+                            <div class="inputs_flex_3"><input type="number" id="answer_text2"></div>
+                            <div class="inputs_flex_2"><p>月</p></div>
+                            <div class="inputs_flex_3"><input type="number" id="answer_text3"></div>
+                            <div class="inputs_flex_2"><p>日</p></div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+    
+            <div id="white2"></div>
+            
+            <!-- 回答決定 -->
+            <div onclick="onDicisionButton()" id="decision_box" class="border_radius">
+                <p id="dicision" class="text_center text_white">test_dicision</p>
+            </div>
+        </div>
+
+    </main>
+    <script src="js/getElement.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/video.js"></script>
+    <script src="js/state/state24.js"></script>
+    <script src="js/state/state23.js"></script>
+    <script src="js/state/state22.js"></script>    
+    <script src="js/state/state21.js"></script>
+    <script src="js/state/state20.js"></script>
+    <script src="js/state/state15.js"></script>
+    <script src="js/state/state14.js"></script>
+    <script src="js/state/state13.js"></script>
+    <script src="js/state/state12.js"></script>
+    <script src="js/pageTransition.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
