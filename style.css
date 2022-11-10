@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+/* 共通部分
+--------------------------------*/
+html{
+    font-size: 100%;
+}
+body{
+        font-family:"Yu Gothic Medium","游ゴシック Medium",YuGothic,"游ゴシック体","ヒラギノ角ゴ Pro W3",sans-serif;
+        line-height: 1.7;
+        font-family: serif;
+        font-size: 6vw;
+        /* margin: -15px 0; */
+}
+
+.text_center{
+    text-align: center;
+}
+.text_white{
+    color: #fff;
+}
+.border_radius{
+    border-radius: 2vw;
+}
+.aline_items{
+    align-items: center;
+}
+.text_36px{
+    font-size: 8vw;
+}
+.text_32px{
+    font-size: 7vw;
+}
+.text_24px{
+    font-size: 5vw;
+}
+.text_20px{
+    font-size: 4vw;
+}
+
+
+/*ナビゲーション
+---------------------------------*/
+#nav{
+    height: 7vh;
+    background-color: #ADC900;
+}
+#nav p{
+    padding-top: 1.5vh;
+    margin-left: 2vw;
+}
+
+
+/*main_contents
+---------------------------------*/
+#main_contents{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+
+/*戻る/進むボタン
+---------------------------------*/
+#head_box{
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+#return_button{
+    width: 26vw;
+    height:14vw;
+    margin-top: 3vw;
+    text-align: right;
+}
+#return_button_img, #next_button_img{
+    width: 31vw;
+}
+#next_button {
+    width: 26vw;
+    height: 14vw;
+    margin-top: 3vw;
+    text-align: left;
+    margin-right: 5vw;
+}
+
+/*白グラデーション
+---------------------------------*/
+#white{
+    z-index: 1;
+    position: absolute;
+    width: 96vw;
+    height: 13vh;
+    background: linear-gradient(rgba(256, 256, 256, 1)0%, rgba(0, 0, 0, 0)100%); 
+    margin-top: -17vw;
+}
+#white2{
+    z-index: 1;
+    position: absolute;
+    width: 96vw;
+    height: 12vh;
+    background: linear-gradient(rgba(0, 0, 0, 0)0%, rgba(256, 256, 256, 0.8)40%, rgba(256, 256, 256, 0.8)90%, rgba(256, 256, 256, 1)100%); 
+    margin-top: 73vh;
+}
+
+
+
+/*スクロールボックス
+---------------------------------*/
+#scroll_box {
+    position: absolute;
+    width: 96vw;
+    z-index: 0;
+    height: 91vh;               /* 横幅を200pxに指定 */
+    overflow-y: scroll;          /* 縦方向にスクロール可能にする */
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+    margin-top: -15vw;
+    padding-bottom: 10vh;
+}
+
+#scroll_box::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+/*タイトル
+---------------------------------*/
+#title_box{
+    height: 17vw;
+    background-color: rgba(173, 201, 0, 0.27);
+    margin-top: 20vw;
+}
+#title{
+    padding-top: 2vw;
+}
+
+/*ビデオ
+---------------------------------*/
+#video_box video{
+    width: 92vw;
+    margin-top: 0vw;
+    margin-left: 1vw;
+}
+#video_items{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1vw;
+}
+#play_video, #back, #front{
+    width: 23vw;
+}
+#ichi{
+    color: #939393;
+}
+#progress{
+    width: 90vw;
+}
+
+#progress {  /*sliderのデザイン*/
+    -webkit-appearance: none; 
+    appearance: none;
+    cursor: pointer; 
+    background: #E9F0BA; 
+    height: 1vw; 
+    width: 88vw; 
+    border-radius: 10px; 
+    outline: 0; /* アウトラインを消して代わりにfocusのスタイルをあてる */
+}
+#progress:focus {
+    box-shadow: 0 0 3px #92AA00;
+}
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    background: #92AA00; 
+    width: 10vw; 
+    height: 10vw; 
+    border-radius: 50%; 
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); 
+}
+
+#progress::-moz-range-thumb {
+    background: #92AA00; 
+    width: 10vw; 
+    height: 10vw; 
+    border-radius: 50%; 
+    box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.15); 
+    border: none; 
+}
+
+#progress::-moz-focus-outer {
+    border: 0;
+}
+
+#progress:active::-webkit-slider-thumb {
+    box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3);
+}
+
+/*説明
+---------------------------------*/
+#explain_box1, #explain_box2{
+    height: 29vw;
+    background: linear-gradient(to bottom,#CECECE00 0%, #E1E1E145 0.01%, #89898945 100%);
+    background-color:#CECECE00;
+    margin-top: 5vw;
+}
+#explain1, #explain_detail1, #explain2, #explain_detail2{
+    color: #676767;
+}
+#explain_detail_box1, #explain_detail_box2{
+    width: 60vw;
+    height: 12vw;
+    margin-left: 19vw;
+    background-color: #fff;
+    border-radius: 2vw;
+    margin-top: 1vw;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.25);
+}
+#tap_text1, #tap_text2{
+    padding-top: 2vw;
+    letter-spacing: -0.0022rem;
+    font-weight: bolder;
+    color: #434343;
+}
+
+/*質問
+---------------------------------*/
+#quistion_box{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    margin-top: 5vw;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+#quistion{
+    padding-top: 8vw;
+}
+#quistion_img{
+    width: 67vw;
+    margin-top: 2vw;
+}
+
+
+/*回答
+---------------------------------*/
+#answer_box{
+    margin-top: 7vw;
+}
+#answer_box div{
+    text-align: center;
+}
+#input_title{
+    display: flex;
+}
+#answer_text{
+    border: 2px solid #000;
+    /* box-shadow:  */
+}
+#answer_type_num{
+    display: flex;
+    justify-content: space-around;
+}
+/* 
+#answer_type_num{
+    display: none;
+}
+#answer_type_slider{
+    display: none;
+}
+#answer_type_input{
+    display: none;
+} */
+
+.answer{
+    border: 1vw solid #008A16;
+}
+
+/* answer_yn */
+#answer_type_yn{
+    width: 86vw;
+    margin-left: 5vw;
+}
+#answer_yes, #answer_no{
+    height: 15vw;
+    background: #E9E9E9;
+    border-radius: 2vw;
+    margin-top: 3vw;
+}
+#answer_type_yn p{
+    padding-top: 2.5vw;
+}
+
+/* answer_slider */
+#answer_slider_0, #answer_slider_1, #answer_slider_2, #answer_slider_3, #answer_slider_4, #answer_slider_5, #answer_slider_6, #answer_slider_7, #answer_slider_8 ,#answer_slider_9 ,#answer_slider_10, #answer_slider_11{
+    height: 15vw;
+    width: 86vw;
+    background: #E9E9E9;
+    border-radius: 2vw;
+    padding-top: 2.5vw;
+    margin-top: 3vw;
+    margin-left: 5vw;
+}
+
+/* answer_input */
+#answer_text{
+    border: 1vw solid #ADC900;
+    border-radius: 2vw;
+}
+
+/* answer_fixed */
+#answer_type_fixed{
+    width: 86vw;
+    height: 15vw;
+    margin-left: 5vw;
+    margin-bottom: 10vw;
+    border: 1vw solid #ADC900;
+    border-radius: 2vw;
+}
+#answer_fixed{
+    padding-top: 2vw;
+    margin-bottom: 3vw;
+}
+
+/* answer_inputs */
+#answer_type_inputs{
+    width: 86vw;
+    margin-left: 5vw;
+}
+#inputs_flex{
+    display: flex;
+}
+.inputs_flex_1{
+    border: 1vw solid #ADC900;
+    border-radius: 2vw;
+    width: 25vw;
+}
+.inputs_flex_2{
+    width: 5vw;
+    margin-left: 1vw;
+    margin-top: 2vw;
+    margin-right: 3vw;
+}
+.inputs_flex_3{
+    border: 1vw solid #ADC900;
+    border-radius: 2vw;
+    width: 15vw;
+}
+
+/*回答決定
+---------------------------------*/
+#decision_box{
+    z-index: 1;
+    position: relative;
+    height: 15vw;
+    background-color: #9AB300;
+    margin-top: 75vh;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+#dicision{
+    padding-top: 2vw;
+}
